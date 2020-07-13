@@ -85,4 +85,13 @@ class ProductsRepository extends AbstractRepositoriy implements ModelsInterface
             ->where('title','LIKE',"%{$str}%")
             ->get();
     }
+
+    /**
+     * все записи
+     * @return mixed
+     */
+    public function getAll()
+    {
+        return $this->startConditions()->all();
+    }
 }

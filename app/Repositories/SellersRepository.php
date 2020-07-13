@@ -86,4 +86,12 @@ class SellersRepository extends AbstractRepositoriy implements ModelsInterface
             ->where('id',$id)
             ->delete();
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAll()
+    {
+        return $this->startConditions()->all();
+    }
 }

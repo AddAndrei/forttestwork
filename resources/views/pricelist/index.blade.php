@@ -19,9 +19,10 @@
                 <thead class="dark">
                 <tr>
                     <td>Цена</td>
-                    <td>Производитель</td>
+
                     <td>Продавец</td>
                     <td>Продукт</td>
+                    <td>Производитель</td>
                     <td>Модель</td>
                     <td><i class="fas fa-align-justify my-fas"></i></td>
                 </tr>
@@ -30,12 +31,14 @@
                 @foreach($pricelist->items() as $model)
                     <tr>
                         <td>{{ $model['price'] }} p.</td>
-                        <td>{{ $model->getManufacturer['title'] }}</td>
+
                         <td>{{ $model->getSeller['title'] }}</td>
                         <td>{{ $model->getProduct['title'] }}</td>
+                        <td>{{ $model->getModel->getManufacturer['title'] }}</td>
                         <td>{{ $model->getModel['title'] }}</td>
+
                         <td>
-                            <a href="{{ route('pricelistredact', $model['id']) }}"><i class="fas fa-code my-fas"></i></a>
+
                             <a href="{{ route('pricelistsdel', $model['id']) }}"><i class="fas fa-archive my-fas"></i></a>
                         </td>
                     </tr>
@@ -47,7 +50,7 @@
 
         <div class="content">
             <div class="row text-left">
-                <a  class="btn-link" href="{{ route('modelscreate') }}">Добавить модель</a>
+                <a  class="btn-link" href="{{ route('pricelistcreate') }}">Добавить новый прайс</a>
             </div>
 
         </div>

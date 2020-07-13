@@ -39,10 +39,11 @@ class PriceList extends Model
     }
 
     /**
+     * Вытаскиваем модель и производителя
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function getModel()
     {
-        return $this->belongsTo(productModel::class,'model_id','id');
+        return $this->belongsTo(productModel::class,'model_id','id')->with(['getManufacturer']);
     }
 }

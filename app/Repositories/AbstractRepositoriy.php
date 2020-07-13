@@ -7,6 +7,7 @@ namespace App\Repositories;
 abstract class AbstractRepositoriy
 {
     /**
+     * Экземпляр сущности
      * Model
      * @var \Illuminate\Contracts\Foundation\Application|mixed
      */
@@ -21,11 +22,13 @@ abstract class AbstractRepositoriy
     }
 
     /**
+     * создаем экзэмпляр класса
      * @return mixed
      */
     abstract protected function getModel();
 
     /**
+     * работаем с его клоном
      * @return \Illuminate\Contracts\Foundation\Application|mixed
      */
     protected function startConditions()

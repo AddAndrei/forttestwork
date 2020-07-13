@@ -96,7 +96,8 @@ class ManufacturerRepository extends AbstractRepositoriy implements ModelsInterf
      */
     public function getAll()
     {
-        return $this->startConditions()->all();
+        return $this->startConditions()
+            ->all();
     }
 
 

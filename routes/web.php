@@ -76,6 +76,8 @@ Route::group([
     Route::post('/save','ModelsController@savemodels')->name('savemodels');
     Route::post('/update','ModelsController@update')->name('updatemodels');
 });
+
+
 /**
  * Прайслист
  */
@@ -83,6 +85,11 @@ Route::group([
     'prefix' => 'pricelist'
 ], function(){
     Route::get('/','PriceListController@index')->name('pricelist');
+    Route::get('/create','PriceListController@create')->name('pricelistcreate');
+
     Route::get('/delete/{id}','PriceListController@drop')->name('pricelistsdel');
     Route::get('/redact/{id}','PriceListController@redact')->name('pricelistredact');
+
+    Route::post('/save','PriceListController@save')->name('savepricelist');
+    Route::post('/getmodels','PriceListController@getmodels')->name('getmodels');
 });

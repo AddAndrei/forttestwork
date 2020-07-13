@@ -88,4 +88,15 @@ class ModelsRepository extends AbstractRepositoriy implements ModelsInterface
             ->with(['getManufacturer'])
             ->get();
     }
+
+    /**
+     * выборка моделей для ajax запроса при создании прайслиста
+     * @param $field
+     * @param $val
+     * @return mixed
+     */
+    public function getByField($field,$val)
+    {
+        return $this->startConditions()->where($field,$val)->get();
+    }
 }
